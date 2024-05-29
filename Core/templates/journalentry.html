@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}New Journal Entry{% endblock %}
+{% block content %}
+<a href="{% url 'home' %}" class="btn btn-primary">Back to Home Page</a>
+<h1>New Journal Entry</h1>
+
+<form method="POST" class="journal-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="submit-btn">Submit</button>
+</form>
+{% endblock %}

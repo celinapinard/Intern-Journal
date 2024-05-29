@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Journal Entries{% endblock %}
+{% block content %}
+<h1>Journal Entries</h1>
+<ul>
+    {% for entry in entries %}
+        <li>
+            <a href="{% url 'journalentry_detail' pk=entry.pk %}">
+                {{ entry.student_name }} - {{ entry.date }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back to Home</a>
+{% endblock %}

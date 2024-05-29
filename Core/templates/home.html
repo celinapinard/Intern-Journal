@@ -1,0 +1,32 @@
+<!-- home.html -->
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<h1>Home Page</h1>
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+        <p class="message {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="button-container">
+    <button id="journalEntryBtn" class="submit-btn" onclick="redirectToNewJournalEntry()">New Journal Entry</button>
+    <button id="listEntriesBtn" class="submit-btn" onclick="redirectToJournalList()">View Journal Entries</button>
+</div>
+<script>
+    function redirectToEdit() {
+        window.location.href = "{% url 'journalentry_edit' pk=1 %}";
+    }
+
+    function redirectToJournalList() {
+        window.location.href = "{% url 'journalentry_list' %}";
+    }
+
+    function redirectToNewJournalEntry() {
+        window.location.href = "{% url 'journalentry' %}";
+    }
+</script>
+{% endblock %}
+

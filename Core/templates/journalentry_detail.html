@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Journal Entry Detail{% endblock %}
+{% block content %}
+  <h2>Journal Entry Detail</h2>
+  <p><strong>Student Name:</strong> {{ entry.student_name }}</p>
+  <p><strong>Student ID:</strong> {{ entry.student_id_no }}</p>
+  <p><strong>Internship Supervisor:</strong> {{ entry.internship_supervisor }}</p>
+  <p><strong>Host Organisation Supervisor:</strong> {{ entry.host_organisation_supervisor }}</p>
+  <p><strong>Start Date:</strong> {{ entry.start_date }}</p>
+  <p><strong>End Date:</strong> {{ entry.end_date }}</p>
+  <p><strong>Internship Host Organisation:</strong> {{ entry.internship_host_organisation }}</p>
+  <p><strong>Internship Job Title:</strong> {{ entry.internship_job_title }}</p>
+  <p><strong>Job Description:</strong> {{ entry.job_description }}</p>
+  <p><strong>Job Responsibilities:</strong> {{ entry.job_responsibilities }}</p>
+  <p><strong>Date of Entry:</strong> {{ entry.date }}</p>
+  <p><strong>Monday Hours:</strong> {{ entry.monday_hours }}</p>
+  <p><strong>Tuesday Hours:</strong> {{ entry.tuesday_hours }}</p>
+  <p><strong>Wednesday Hours:</strong> {{ entry.wednesday_hours }}</p>
+  <p><strong>Thursday Hours:</strong> {{ entry.thursday_hours }}</p>
+  <p><strong>Friday Hours:</strong> {{ entry.friday_hours }}</p>
+  <p><strong>Weekly Hours:</strong> {{ entry.weekly_hours }}</p>
+  <p><strong>Total Hours:</strong> {{ entry.total_hours }}</p>
+  <p><strong>Take Away:</strong> {{ entry.take_away }}</p>
+  <p><strong>New Learning:</strong> {{ entry.new_learning }}</p>
+  <p><strong>Interesting Points:</strong> {{ entry.interesting_points }}</p>
+  <p><strong>Comments:</strong> {{ entry.comments }}</p>
+  <p><strong>Areas for Clarity:</strong> {{ entry.areas_for_clarity }}</p>
+  <p><strong>Future Use:</strong> {{ entry.future_use }}</p>
+  <p><strong>Date:</strong> {{ entry.date }}</p>
+
+  <a href="{% url 'journalentry_list' %}" class="btn btn-primary">Back to Journal Entry List</a>
+  <a href="{% url 'journalentry_edit' pk=entry.pk %}" class="btn btn-secondary">Edit Form</a>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Edit Journal Entry{% endblock %}
+{% block content %}
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Edit Journal Entry</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h3>Edit Journal Entry</h3>
+        <hr/>
+        {% for message in messages %}
+            <p class="message {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</p>
+        {% endfor %}
+        <form method="POST" class="journal-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit-btn">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}
