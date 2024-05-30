@@ -6,7 +6,7 @@ from django.shortcuts import get_object_or_404
 
 def home(request):
     journal_entries = JournalEntry.objects.all()
-    print(journal_entries)  # Add this line for debugging
+    print(journal_entries)  
     return render(request, 'home.html', {'journalentry_list': journal_entries})
 
 def journal_entry(request):
@@ -28,7 +28,7 @@ def edit_journal_entry(request, pk):
         if form.is_valid():
             form.save()
             messages.success(request, 'Journal entry has been updated.')
-            return redirect('home')  # Redirect to the home page
+            return redirect('home') 
         else:
             messages.error(request, 'Please correct the errors below.')
     else:

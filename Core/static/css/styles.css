@@ -72,6 +72,7 @@ form.journal-form .submit-btn {
 form.journal-form .submit-btn:hover {
     background-color: #45a049;
 }
+
 .navbar {
     background-color: #333;
     color: #fff;
@@ -107,4 +108,22 @@ form.journal-form .submit-btn:hover {
 
 .navbar-menu li a:hover {
     text-decoration: underline;
+}
+
+button, .button {
+    padding: 12px 24px;
+    background-color: rgb(116, 76, 120);
+    color: black;
+    border-radius: 7px;
+    transition: transform 250ms cubic-bezier(.2, .8, .4, 1);
+    border: none; 
+    cursor: pointer;
+}
+
+button:hover, .button:hover {
+    transform: scale(1.10);
+}
+
+button:active, .button:active {
+    transform: scale(0.9);
 }
